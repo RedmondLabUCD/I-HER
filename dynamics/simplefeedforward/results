@@ -1,0 +1,35 @@
+One trained on normalised observations, the other on unnormalised
+
+replay of 100,000 env steps
+Trained for 100,000 adam steps
+
+Batch size 512
+
+See dynamics_model.py for model
+
+Results:
+
+Random actions (over 10 rollouts)
+--------------
+No norm -> Div error = 0.0011, Step error = 2.472e-06
+
+Norm    -> Div error = 0.0008, Step error = 1.2e-06
+
+Comments:
+
+Unnormalised 
+- slight steady cube drift
+- gripper very good
+- evidence of pushing cube and independence of cube from gripper when not in contact
+
+Normalised
+- Less random cube movement with normalised observations
+- Reults show probably better overall
+
+Norm_expert
+- Trained on a third white noise action, a third brown noise/smoothed actions and a third expert actions. Expert actions are by a model which achieves roughly 90% success
+- Trained for 150,000 grad steps. replay of 100,000 env steps
+
+Norm_whitebrown
+- Trained for 150,000 grad steps. replay of 100,000 env steps
+- half white noise actions, half smoothed actions
