@@ -32,10 +32,24 @@ To run training:
 You can change the `train.py` script to choose which 'ddpg_trainer' to use (`ddpg_differ_real_delta` is recommended).
 
 
-### Sonic
+### Sonic (University College Dublin's computing cluster)
 
 To run on sonic:
 
     sbatch her.sh
 
 Modify the `her.sh` script and hyperparameters as needed. The current script restricts the job to nodes 66 or 67 (these were the only ones with Mujoco installed), but this may no longer be necessary.
+
+## Associated publications
+
+https://arxiv.org/abs/2110.02414
+
+@misc{mccarthy2023imaginaryhindsightexperiencereplay,
+      title={Imaginary Hindsight Experience Replay: Curious Model-based Learning for Sparse Reward Tasks}, 
+      author={Robert McCarthy and Qiang Wang and Stephen J. Redmond},
+      year={2023},
+      eprint={2110.02414},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2110.02414}, 
+}
